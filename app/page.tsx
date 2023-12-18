@@ -1,9 +1,12 @@
 // pages/index.tsx
+"use client";
 import Head from 'next/head';
 import Link from 'next/link';
+import { Authenticator } from "@aws-amplify/ui-react";
 
 export default function Home() {
   return (
+    <Authenticator>
     <div className="min-h-screen flex flex-col items-center justify-center py-2">
       <Head>
         <title>Employee of the Year Voting</title>
@@ -44,5 +47,6 @@ export default function Home() {
         Powered by <a href="https://nextjs.org" className="ml-1">Next.js</a>
       </footer>
     </div>
+    </Authenticator>
   )
 }

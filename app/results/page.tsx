@@ -1,6 +1,7 @@
 // pages/results.tsx
 import Head from 'next/head';
 import Link from 'next/link';
+import { Authenticator } from "@aws-amplify/ui-react";
 
 export default function Results() {
     // Dummy data - replace this with actual data from your backend
@@ -11,6 +12,7 @@ export default function Results() {
     ];
 
     return (
+        <Authenticator>
         <div className="min-h-screen flex flex-col items-center justify-center py-2">
             <Head>
                 <title>Voting Results</title>
@@ -45,5 +47,6 @@ export default function Results() {
                 </Link>
             </footer>
         </div>
+        </Authenticator>
     );
 }

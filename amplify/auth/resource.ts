@@ -8,6 +8,7 @@ import { defineAuth } from '@aws-amplify/backend';
 export const auth = defineAuth({
   loginWith: {
     email: true,
+    phone: true,
     // add social providers
     externalProviders: {
       /**
@@ -25,12 +26,12 @@ export const auth = defineAuth({
    * enable multifactor authentication
    * @see https://docs.amplify.aws/gen2/build-a-backend/auth/manage-mfa
    */
-  // multifactor: {
-  //   mode: 'OPTIONAL',
-  //   sms: {
-  //     smsMessage: (code) => `Your verification code is ${code}`,
-  //   },
-  // },
+  multifactor: {
+    mode: 'OPTIONAL',
+    sms: {
+      smsMessage: (code) => `Your verification code is ${code}`,
+    },
+  },
   userAttributes: {
     /** request additional attributes for your app's users */
     // profilePicture: {

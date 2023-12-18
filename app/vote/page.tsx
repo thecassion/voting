@@ -4,6 +4,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { Authenticator } from "@aws-amplify/ui-react";
 
 export default function Vote() {
     const [selectedEmployee, setSelectedEmployee] = useState('');
@@ -21,6 +22,7 @@ export default function Vote() {
     };
 
     return (
+        <Authenticator>
         <div className="min-h-screen flex flex-col items-center justify-center py-2">
             <Head>
                 <title>Vote for Employee of the Year</title>
@@ -62,5 +64,6 @@ export default function Vote() {
                 </Link>
             </footer>
         </div>
+        </Authenticator>
     );
 }
